@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  app:
+    hostname: app
+    build:
+      context: .
+    env_file:
+      - .env
+    ports:
+      - "${PORT_APP}:${PORT_APP}"
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "${PORT_APP}"]
+
