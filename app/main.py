@@ -9,8 +9,8 @@ async def greet_user(request):
     return JSONResponse({"message": f"Привет!, {name}!"})
 
 
-routes = [
-    Route("/greet", greet_user, methods=["POST"]),
-]
-
-app = Starlette(routes=routes)
+app = Starlette(
+    routes=[
+        Route("/greet", greet_user, methods=["POST"]),
+    ]
+)
